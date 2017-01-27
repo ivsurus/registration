@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by Ivan_Surus on 1/26/2017.
  */
-public class Runner {
+public class RunnerFirefox {
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -34,7 +34,7 @@ public class Runner {
 
         Thread.sleep(2000);
 
-//        driver.findElement(By.xpath(".//option[text()='Mińsk']"));
+        driver.findElement(By.xpath(".//option[text()='Mińsk']"));
        // List<WebElement> listWEbr =  driver.findElements(By.xpath(".//*[@id='tresc_cbListaPlacowek']/option"));
     //    WebElement element =  driver.findElement(By.xpath(".//option[text()='Mińsk']"));
    //     System.out.println("!!!!!!!!" + element.getText());
