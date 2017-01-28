@@ -14,12 +14,14 @@ import java.util.concurrent.TimeUnit;
 public class RunnerCrome {
     public static void main(String[] args) throws InterruptedException {
 
+        //для mac
+        System.setProperty("webdriver.chrome.driver", "/Users/annasurus/Desktop/chromedriver");
 
-
-        System.setProperty("webdriver.chrome.driver", "c:\\Users\\Ivan_Surus\\Downloads\\chromedriver.exe");
+        //windows
+        //System.setProperty("webdriver.chrome.driver", "c:\\Users\\Ivan_Surus\\Downloads\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-
-        driver.get("https://by.e-konsulat.gov.pl/");
+        driver.get("www.by.e-konsulat.gov.pl/");
+        //driver.get("https://by.e-konsulat.gov.pl/");
         //выбираем английский page1
         driver.findElement(By.xpath("//option[text()='English']")).click();
         //выбираем минск
