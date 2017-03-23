@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -15,12 +16,21 @@ public class RunnerCrome {
     public static void main(String[] args) throws InterruptedException {
 
         //для mac
-        System.setProperty("webdriver.chrome.driver", "/Users/annasurus/Desktop/chromedriver");
+       //  System.setProperty("webdriver.chrome.driver", "/Users/annasurus/Desktop/chromedriver");
 
-        //windows
-        //System.setProperty("webdriver.chrome.driver", "c:\\Users\\Ivan_Surus\\Downloads\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        driver.get("www.by.e-konsulat.gov.pl/");
+        //windows лаба
+       //  System.setProperty("webdriver.chrome.driver", "c:\\Users\\Ivan_Surus\\Downloads\\chromedriver.exe");
+        //для ноутбука
+      //  System.setProperty("webdriver.chrome.driver", "C:\\Users\\Ivan\\Downloads\\chromedriver_win32\\chromedriver.exe");
+
+
+      //  WebDriver driver = new ChromeDriver();
+        FirefoxProfile profile = new FirefoxProfile();
+     //   profile.setPreference("browser.startup.homepage", "about:blank");
+        System.setProperty("webdriver.gecko.driver", "C:\\Users\\Ivan\\Downloads\\geckodriver-v0.12.0-win64\\geckodriver.exe");
+
+        WebDriver driver = new FirefoxDriver();
+        driver.get("https://by.e-konsulat.gov.pl/");
         //driver.get("https://by.e-konsulat.gov.pl/");
         //выбираем английский page1
         driver.findElement(By.xpath("//option[text()='English']")).click();
@@ -54,7 +64,7 @@ public class RunnerCrome {
 
         driver.findElement(By.id("cp_f_txt17WaznyDo")).sendKeys("2030-02-20");
         driver.findElement(By.id("cp_f_txt15WydanyPrzez")).sendKeys("RUVD");
-
+//закончил здесь
         //чекбокс
         if ( !driver.findElement(By.id("cp_f_opiekunowie_chkNieDotyczy")).isSelected() )
         {

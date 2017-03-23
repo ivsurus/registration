@@ -1,7 +1,15 @@
 package pages;
 
-/**
- * Created by Ivan_Surus on 1/27/2017.
- */
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+
 public class PageSelectVisa {
+
+    @FindBy(linkText = "Schengen Visa - Fill in form")
+    WebElement fillInSchengenLink;
+
+    public void selectFillInSchengen(){
+        fillInSchengenLink.click();
+    }
 }
